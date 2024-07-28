@@ -13,7 +13,6 @@ export default function Page() {
 	}
 
 
-
 	return (
 		<div className="rounded-lg bg-blue-50 my-3 p-3">
 			<form className={""}>
