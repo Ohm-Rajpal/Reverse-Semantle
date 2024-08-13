@@ -1,11 +1,12 @@
 "use client"
-import { useState } from 'react';
 
+import { useState } from 'react';
 
 export default function Home() {
 
 	const [wordInput, setWordInput] = useState<string>();
 	const [similarityRatingInput, setSimilarityRatingInput] = useState<string>();
+	const [allInputs, setAllInputs] = useState<string[]>([]);
 
 	const handleWordChange = (event) => {
     	setWordInput(event.target.value);
@@ -15,10 +16,17 @@ export default function Home() {
   	  setSimilarityRatingInput(event.target.value);
   	};
 
+	// this logic is not fully right I think, Arnab can take a look later
   	const handleSubmit = (event) => {
 		event.preventDefault();
-    	console.log('Word:', wordInput);
-    	console.log('Similarity Rating:', similarityRatingInput);
+		
+		if (wordInput && wordInput.trim() !== '') {  // Check if wordInput is not empty
+			setAllInputs(prevInputs => [...prevInputs, wordInput]);
+	  
+			console.log('Word:', wordInput);
+			console.log('Similarity Rating:', similarityRatingInput);
+			console.log(`All inputs as of now: ${allInputs}`);
+		}
 	}
 
 	return (
