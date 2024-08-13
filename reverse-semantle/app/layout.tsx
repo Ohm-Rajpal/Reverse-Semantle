@@ -17,8 +17,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-            <body className={`${dmSans.className} m-3 bg-white`}>
-                <h1 className="text-3xl font-bold">Reverse Semantle</h1>
+            <body className={`${dmSans.className}`}>
                 {children}
 			</body>
 		</html>
