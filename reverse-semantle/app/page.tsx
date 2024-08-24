@@ -38,14 +38,14 @@ export default function Home() {
 
 				<form className="m-3 p-3 rounded-lg" onSubmit={handleSubmit}>
 					<input
-						className="m-3 p-3 border-2 border-slate-200 rounded-lg w-fit"
+						className="m-3 p-3 border-2 border-slate-200 rounded-lg w-fit text-black"
 						placeholder="Enter Word"
 						type="text"
 						value={wordInput}
 						onChange={handleWordChange}
 					/>
 					<input
-						className="m-3 p-3 border-2 border-slate-200 rounded-lg w-fit"
+						className="m-3 p-3 border-2 border-slate-200 rounded-lg w-fit text-black"
 						placeholder="Similarity Rating"
 						type="text"
 						value={similarityRatingInput}
@@ -53,6 +53,25 @@ export default function Home() {
 					/>
 					<button type={"submit"} className="m-3 p-3 bg-blue-500 text-white rounded-lg">Submit</button>
 				</form>
+
+				{/* Create a rectangle that displays the information the user entered in a nice format */}
+				<table className="table-auto">
+					<thead className=''>
+						<tr>
+						<th>Word</th>
+						<th>Cosine Similarity</th>
+						<th>Guess Number</th>
+						</tr>
+					</thead>
+					<tbody className=''>
+						<tr>
+						<td>round</td>
+						<td>1.23</td>
+						<td>1</td>
+						</tr>
+					</tbody>
+				</table>
+
 			</main>
 		</div>
 	);
