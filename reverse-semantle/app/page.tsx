@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react';
+import MyTable from './Components/MyTable';
 
 export default function Home() {
 
@@ -55,22 +56,7 @@ export default function Home() {
 				</form>
 
 				{/* Create a rectangle that displays the information the user entered in a nice format */}
-				<table className="table-auto">
-					<thead className=''>
-						<tr>
-						<th>Word</th>
-						<th>Cosine Similarity</th>
-						<th>Guess Number</th>
-						</tr>
-					</thead>
-					<tbody className=''>
-						<tr>
-						<td>round</td>
-						<td>1.23</td>
-						<td>1</td>
-						</tr>
-					</tbody>
-				</table>
+				<MyTable />
 
 			</main>
 		</div>
