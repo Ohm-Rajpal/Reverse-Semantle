@@ -56,7 +56,9 @@ export default function Home() {
 				</form>
 
 				{/* Create a rectangle that displays the information the user entered in a nice format */}
-				<MyTable />
+				
+				
+				<MyTable data={}/>
 
 			</main>
 		</div>
