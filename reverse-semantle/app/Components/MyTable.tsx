@@ -3,7 +3,7 @@ import React from "react";
 export default function MyTable({ data }) {
 
     return (
-        
+
         <div>
             
             <div className="flex justify-center pb-4">
@@ -19,6 +19,7 @@ export default function MyTable({ data }) {
                         </tr>
                     </thead>
                     <tbody >
+                        {/* We will have to re-render this every time a change is made on the press of a button */}
                         <tr>
                             <td className="text-md px-6 py-3">Test</td>
                             <td className="text-md px-6 py-3">1.23</td>
