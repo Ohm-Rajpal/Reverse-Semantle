@@ -20,11 +20,13 @@ export default function MyTable({ data }) {
                     </thead>
                     <tbody >
                         {/* We will have to re-render this every time a change is made on the press of a button */}
-                        <tr>
-                            <td className="text-md px-6 py-3">Test</td>
-                            <td className="text-md px-6 py-3">1.23</td>
-                            <td className="text-md px-6 py-3">1</td>
-                        </tr>
+                        {data.map((item, index) => (
+                            <tr key={item.id}>
+                                <td className="text-md px-6 py-3">{item.word}</td>
+                                <td className="text-md px-6 py-3">{item.similarityRating}</td>
+                                <td className="text-md px-6 py-3">{index + 1}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
