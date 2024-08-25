@@ -25,6 +25,18 @@ export default function Home() {
 	// Add CRUD functionality for firebase database
 	const updateAllData = async () => {
 		// Fetch data from Firebase and update the state
+		const snapshot = query(collection(db, 'inventory'));
+        const docs = await getDocs(snapshot);
+        const myData: any[] = [];
+
+		// iterate over every item in the db and add to list
+		docs.forEach((document) => {
+			data.push({
+				word: document.id,
+				...document.data()
+			});
+		});
+		setData(myData); // state function
 	}
 
 	// If the user accidentally messes up the input
