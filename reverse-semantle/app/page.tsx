@@ -9,6 +9,28 @@ export default function Home() {
 	const [similarityRatingInput, setSimilarityRatingInput] = useState<string>();
 	const [allInputs, setAllInputs] = useState<string[]>([]);
 
+
+	// Add CRUD functionality for firebase database
+	const updateAllData = async () => {
+
+	}
+
+	// if the user accidentally messes up the input
+	const removeItem = async () => {
+
+	}
+
+	// edit input item
+	const editItem = async (userItem: string) => {
+		
+	}	
+
+	const addItem = async () => {
+
+	}
+
+
+
 	const handleWordChange = (event) => {
     	setWordInput(event.target.value);
   	};
@@ -58,7 +80,7 @@ export default function Home() {
 				{/* Create a rectangle that displays the information the user entered in a nice format */}
 				
 				
-				<MyTable data={}/>
+				{/* <MyTable data={}/> */}
 
 			</main>
 		</div>
