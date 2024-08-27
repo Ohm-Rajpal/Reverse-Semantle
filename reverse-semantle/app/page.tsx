@@ -15,6 +15,10 @@ interface DataItem {
     similarityRating: string;
 }
 
+
+// having second thoughts having to use firebase. We could locally just have a JSON I will update
+// let's discuss this with arnab
+
 export default function Home() {
 	// think about what we need
 	const [wordInput, setWordInput] = useState<string>("");
@@ -25,23 +29,26 @@ export default function Home() {
 	// Add CRUD functionality for firebase database
 	const updateAllData = async () => {
 		// Fetch data from Firebase and update the state
-		const snapshot = query(collection(db, 'inventory'));
+		const snapshot = query(collection(db, 'wordData'));
         const docs = await getDocs(snapshot);
         const myData: any[] = [];
 
 		// iterate over every item in the db and add to list
 		docs.forEach((document) => {
-			data.push({
+			myData.push({
 				word: document.id,
 				...document.data()
 			});
 		});
-		setData(myData); // state function
+		setData(myData);
 	}
 
 	// If the user accidentally messes up the input
 	const removeItem = async (id: string) => {
-		// Remove item from Firebase and update the state
+		const snapshot = query(collection(db, 'wordData'));
+        const docs = await getDocs(snapshot);
+
+
 	}
 
 	// Edit input item
